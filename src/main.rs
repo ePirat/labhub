@@ -8,6 +8,7 @@ extern crate rocket_contrib;
 extern crate serde_derive;
 #[macro_use]
 extern crate lazy_static;
+extern crate env_logger;
 extern crate futures;
 extern crate regex;
 extern crate reqwest;
@@ -27,6 +28,8 @@ mod testing;
 use log::info;
 
 fn main() {
+    env_logger::init();
+
     let rocket = rocket::ignite();
 
     info!("✨ May your hopes and dreams become reality ✨");
