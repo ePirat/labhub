@@ -19,7 +19,7 @@ debug:
 clean:
 	$(CARGO) clean
 
-install: all
+install: target/release/labhub LabHub.toml
 	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(sysconfdir)
 	$(INSTALL) target/release/labhub $(DESTDIR)$(bindir)/labhub
 	if ! test -f $(DESTDIR)$(sysconfdir)/LabHub.toml; then \
